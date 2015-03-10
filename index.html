@@ -4,29 +4,33 @@
   <title>Blog Book</title>
 </head>
 <body>
-  <p id="blog"></p>
+  <p id="blog">??</p>
+  <div id="image"></div>
+  <p>url link</p>
+  <div id="blog-link"></div>
+
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script>
     $(document).ready( function() {
-
       $.ajax({
         dataType: 'jsonp',
-        url: "https://api.tumblr.com/v2/blog/marissameyer.tumblr.com/info?api_key=5P9JPiGHHbnItpkHuxR0z591UnVqoCmX1nSvFBJVtRqQBDS1gQ",
+        url: "https://api.tumblr.com/v2/blog/marissameyer.tumblr.com/posts?api_key=5P9JPiGHHbnItpkHuxR0z591UnVqoCmX1nSvFBJVtRqQBDS1gQ",
         success: function(info){
-      console.log(info)
-    }
+          console.log(info);
+          myArray = new Array();
+          myArray = info.response.posts;
+          var text;
+          var urlText;
+          urlText = info.response.blog.url;
+          text = myArray[1].date;
+          image = myArray[1].photos[0].original_size.url;
+          $("#blog").text(text);
+          $("#image").html('<img src="'+(image)+'"/>');
+          $("#blog-link").html('<a href="'+(urlText)+'">'+(urlText)+'</a>');
 
 
-
+        }
       });
-
-
-
-
-
-
-
-
     });
   </script>
 </body>

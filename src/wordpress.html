@@ -12,19 +12,18 @@
 
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="WordpressPostHandler.js"></script>
+  <script src="TumblrPostHandler.js"></script>
+  <script src="ApiQueryHandler.js"></script>
   <script>
     $(document).ready( function() {
-      $.ajax({
-        dataType: 'jsonp',
-        url: "https://public-api.wordpress.com/rest/v1.1/sites/appavaz.wordpress.com/posts/",
-        success: function(info){
-          var test;
-
-          test = new WordpressPostHandler(info.posts[0]);
-          console.log(test.blogDate());
-          }
-        });
+        var test;
+        test = new ApiQueryHandler("katebeavis.wordpress.com")
+        test.targetAPI();
       });
   </script>
 </body>
 </html>
+
+
+<!-- digiphile.wordpress.com
+katebeavis.wordpress.com-->

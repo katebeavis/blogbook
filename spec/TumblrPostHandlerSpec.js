@@ -98,8 +98,9 @@ describe('TumblrPostHandler', function() {
       expect(tumblr.blogMedia()).toEqual("https:\/\/vt.tumblr.com\/tumblr_nkm2xyJMLv1srd41x.mp4");
     });
 
-
-
+    it('does NOT return a text', function(){
+      expect(tumblr.blogText()).toEqual("");
+    });
 
   });
 

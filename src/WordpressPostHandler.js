@@ -43,11 +43,11 @@ WordpressPostHandler.prototype.blogMedia = function() {
 WordpressPostHandler.prototype.arrayConstructor = function() {
   var wpContent;
   wpContent = [];
-  wpContent.push(this.blogDate(this.post[0])); 
-  wpContent.push(this.blogTitle(this.post[0])); 
-  wpContent.push(this.blogBacklink(this.post[0])); 
-  wpContent.push(this.blogSource(this.post[0])); 
-  wpContent.push(this.blogMedia(this.post[0])); 
+  wpContent.push(this.blogDate(this.post[0]));
+  wpContent.push(this.blogTitle(this.post[0]));
+  wpContent.push(this.blogBacklink(this.post[0]));
+  wpContent.push(this.blogSource(this.post[0]));
+  wpContent.push(this.blogMedia(this.post[0]));
   wpContent.push(this.blogText(this.post[0]));
   return wpContent
 };

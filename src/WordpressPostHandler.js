@@ -4,8 +4,8 @@ var WordpressPostHandler = function(blogpost) {
 
 WordpressPostHandler.prototype.blogDate = function() {
  var blogDate;
- blogDate = this.post[0].date;
- return blogDate;
+ blogDate = new Date(this.post[0].date)
+ return blogDate.toDateString();
 };
 
 

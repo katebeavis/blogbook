@@ -17,17 +17,17 @@ ApiQueryHandler.prototype.targetAPI = function() {
 
 
 ApiQueryHandler.prototype.callAPI = function(url) {
-  // var content;
-  // var _this = this;
-  // $.ajax({
-  //   dataType: 'jsonp',
-  //   url: url,
-  //   success: function(info){
+  var content;
+  var _this = this;
+  $.ajax({
+    dataType: 'jsonp',
+    url: url,
+    success: function(info){
      
-  //     _this.listCreator(info);
+      _this.listCreator(info);
       
-  //   }
-  // });
+    }
+  });
 };
 
 

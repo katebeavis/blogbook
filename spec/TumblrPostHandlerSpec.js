@@ -34,10 +34,6 @@ describe('TumblrPostHandler', function() {
       expect(tumblr.blogMedia()).toEqual("http:\/\/40.media.tumblr.com\/6279c314718c0a7a93574aef5af64b49\/tumblr_nkm2uyc2Lr1srd41xo1_1280.jpg")
     });
 
-    it('returns an image caption', function() {
-      expect(tumblr.blogTitle()).toEqual("\u003Cp\u003E3400+ people getting ready to break the Guiness Book&#8217;s world record for largest simultaneous yodel.  In honor of \u003Ca class=\u0022tumblelog\u0022 href=\u0022http:\/\/tmblr.co\/mxiVom33SfB4Ki2-qtjCHnQ\u0022\u003Eyahoo\u003C\/a\u003E\u0027s 20th birthday!\u003C\/p\u003E")
-    });
-
     it('does NOT return the body of the text', function() {
       expect(tumblr.blogText()).toEqual('');
     });
@@ -66,18 +62,6 @@ describe('TumblrPostHandler', function() {
       expect(tumblr.blogMedia()).toEqual('')
     });
 
-    // it('does NOT return an image caption', function() {
-    //   expect(tumblr.graphicCaption()).toEqual("")
-    // });
-
-    // it('does NOT return a description of the link', function() {
-    //   expect(tumblr.linkDescription()).toEqual('');
-    // });
-
-    // it('does NOT return the link', function() {
-    //   expect(tumblr.hyperLink()).toEqual("")
-    // });
-
   });
 
   describe('Handling a link blog', function() {
@@ -94,32 +78,29 @@ describe('TumblrPostHandler', function() {
       expect(tumblr.blogMedia()).toEqual("http:\/\/serwerworld.tumblr.com\/post\/111372923435\/a-new-post");
     });
 
-    // it('does NOT return the video url', function(){
-    //   expect(tumblr.videoUrl()).toEqual("");
-    // });
+    it('does NOT return a text', function(){
+      expect(tumblr.blogText()).toEqual("");
+    });
 
   });
 
-  // describe('Handling a video blog', function() {
+  describe('Handling a video blog', function() {
 
-  //   var videoBlog;
-  //   videoBlog = {"blog_name":"marissamayr","id":112559839894,"post_url":"http:\/\/marissamayr.tumblr.com\/post\/112559839894\/what-3400-people-yodeling-sounds-like-we","slug":"what-3400-people-yodeling-sounds-like-we","type":"video","date":"2015-03-03 01:03:53 GMT","timestamp":1425344633,"state":"published","format":"html","reblog_key":"FAYRbRKU","tags":[],"short_url":"http:\/\/tmblr.co\/Z4v08s1er5jgM","highlighted":[],"note_count":105,"caption":"\u003Cp\u003EWhat 3400+ people yodeling sounds like.  We shattered the record by a factor of 2 (previously 1700 people), but they made us yodel for a minute straight!\u003C\/p\u003E","video_url":"https:\/\/vt.tumblr.com\/tumblr_nkm2xyJMLv1srd41x.mp4","html5_capable":true,"thumbnail_url":"https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg","thumbnail_width":640,"thumbnail_height":360,"duration":8,"player":[{"width":250,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2e8a62639884718\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027250\u0027 height=\u0027140\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"},{"width":400,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2e9910350035692\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027400\u0027 height=\u0027225\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"},{"width":500,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2ea411465473332\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027500\u0027 height=\u0027281\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"}],"video_type":"tumblr"};
-  //   var tumblr = new TumblrPostHandler(videoBlog);
+    var videoBlog;
+    videoBlog = {"blog_name":"marissamayr","id":112559839894,"post_url":"http:\/\/marissamayr.tumblr.com\/post\/112559839894\/what-3400-people-yodeling-sounds-like-we","slug":"what-3400-people-yodeling-sounds-like-we","type":"video","date":"2015-03-03 01:03:53 GMT","timestamp":1425344633,"state":"published","format":"html","reblog_key":"FAYRbRKU","tags":[],"short_url":"http:\/\/tmblr.co\/Z4v08s1er5jgM","highlighted":[],"note_count":105,"caption":"\u003Cp\u003EWhat 3400+ people yodeling sounds like.  We shattered the record by a factor of 2 (previously 1700 people), but they made us yodel for a minute straight!\u003C\/p\u003E","video_url":"https:\/\/vt.tumblr.com\/tumblr_nkm2xyJMLv1srd41x.mp4","html5_capable":true,"thumbnail_url":"https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg","thumbnail_width":640,"thumbnail_height":360,"duration":8,"player":[{"width":250,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2e8a62639884718\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027250\u0027 height=\u0027140\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"},{"width":400,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2e9910350035692\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027400\u0027 height=\u0027225\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"},{"width":500,"embed_code":"\n\u003Cvideo  id=\u0027embed-54ff29a2ea411465473332\u0027 class=\u0027crt-video crt-skin-default\u0027 width=\u0027500\u0027 height=\u0027281\u0027 poster=\u0027https:\/\/31.media.tumblr.com\/tumblr_nkm2xyJMLv1srd41x_frame1.jpg\u0027 preload=\u0027none\u0027 data-crt-video data-crt-options=\u0027{\u0022duration\u0022:8,\u0022hdUrl\u0022:false,\u0022filmstrip\u0022:{\u0022url\u0022:\u0022https:\\\/\\\/33.media.tumblr.com\\\/previews\\\/tumblr_nkm2xyJMLv1srd41x_filmstrip.jpg\u0022,\u0022width\u0022:\u0022200\u0022,\u0022height\u0022:\u0022112\u0022}}\u0027 \u003E\n    \u003Csource src=\u0022https:\/\/api.tumblr.com\/video_file\/112559839894\/tumblr_nkm2xyJMLv1srd41x\u0022 type=\u0022video\/mp4\u0022\u003E\n\u003C\/video\u003E\n"}],"video_type":"tumblr"};
+    var tumblr = new TumblrPostHandler(videoBlog);
 
-  //   it('returns the video caption', function() {
-  //     expect(tumblr.graphicCaption()).toEqual("\u003Cp\u003EWhat 3400+ people yodeling sounds like.  We shattered the record by a factor of 2 (previously 1700 people), but they made us yodel for a minute straight!\u003C\/p\u003E");
-  //   });
+    it('returns the video caption as the title', function() {
+      expect(tumblr.blogTitle()).toEqual("\u003Cp\u003EWhat 3400+ people yodeling sounds like.  We shattered the record by a factor of 2 (previously 1700 people), but they made us yodel for a minute straight!\u003C\/p\u003E");
+    });
 
-  //   it('returns the video url', function(){
-  //     expect(tumblr.videoUrl()).toEqual("https:\/\/vt.tumblr.com\/tumblr_nkm2xyJMLv1srd41x.mp4");
-  //   });
-
-  // });
-
-  // describe('uniform output', function() {
-
-  // });
+    it('returns the video url', function(){
+      expect(tumblr.blogMedia()).toEqual("https:\/\/vt.tumblr.com\/tumblr_nkm2xyJMLv1srd41x.mp4");
+    });
 
 
+
+
+  });
 
 });

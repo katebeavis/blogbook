@@ -15,8 +15,8 @@
     $(document).ready( function() {
       $.ajax({
         dataType: 'jsonp',
-        url: "https:\/\/api.tumblr.com/v2/blog/marissamayr.tumblr.com/posts?api_key=5P9JPiGHHbnItpkHuxR0z591UnVqoCmX1nSvFBJVtRqQBDS1gQ",
-        success: function(info){
+        url: "https://api.tumblr.com/v2/blog/marissamayr.tumblr.com/posts?api_key=5P9JPiGHHbnItpkHuxR0z591UnVqoCmX1nSvFBJVtRqQBDS1gQ",
+         }).done(function(info) {
           console.log(info);
           myArray = new Array();
           myArray = info.response.posts;
@@ -36,7 +36,7 @@
             $('#blog-text').html(blogText);
           };
         }
-      });
+
 
     });
   </script>

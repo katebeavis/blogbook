@@ -116,6 +116,13 @@ describe('TumblrPostHandler', function() {
 
   });
 
+  describe('uniform output', function() {
+
+[]
+
+
+  });
+
 
 
 });

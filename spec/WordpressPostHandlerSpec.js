@@ -1,6 +1,6 @@
 describe('WordpressPostHandler ', function() {
 
-  
+
 
   describe('handling a text only post', function() {
     var textBlog;
@@ -12,7 +12,7 @@ describe('WordpressPostHandler ', function() {
     });
 
     it('returns the blog date', function(){
-      expect(wpHandler.blogDate()).toEqual("2015-03-11T09:03:12+00:00");
+      expect(wpHandler.blogDate()).toEqual("Wed Mar 11 2015");
     });
 
     it("Title", function() {
@@ -37,7 +37,7 @@ describe('WordpressPostHandler ', function() {
 
 
     it("can create an array conatining all content of the post", function() {
-      expect(wpHandler.arrayConstructor()).toEqual(["2015-03-11T09:03:12+00:00", "Apps For Autism- A Boon For All", "https://appavaz.wordpress.com/2015/03/11/apps-for-autism-a-boon-for-all-2/", "appavaz", "https://illustrationage.files.wordpress.com/2015/03/the-wonderfully-surreal-illustrations-of-marta-monteiro.png", "<p>All know a child with autism, never-ever, easily handle and for parents it is the biggest challenge where they are alone. Now, you don\u2019t need to take so much worries, as you got a solution to install free\u00a0apps for autism. Yes, you\u00a0heard\u00a0correctly, free apps for your child, which will help various parents in\u00a0providing various strategies [&hellip;]<\/p>\n"])
+      expect(wpHandler.arrayConstructor()).toEqual(["Wed Mar 11 2015", "Apps For Autism- A Boon For All", "https://appavaz.wordpress.com/2015/03/11/apps-for-autism-a-boon-for-all-2/", "appavaz", "https://illustrationage.files.wordpress.com/2015/03/the-wonderfully-surreal-illustrations-of-marta-monteiro.png", "<p>All know a child with autism, never-ever, easily handle and for parents it is the biggest challenge where they are alone. Now, you don\u2019t need to take so much worries, as you got a solution to install free\u00a0apps for autism. Yes, you\u00a0heard\u00a0correctly, free apps for your child, which will help various parents in\u00a0providing various strategies [&hellip;]<\/p>\n"])
     });
 
 

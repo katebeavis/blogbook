@@ -23,9 +23,9 @@ ApiQueryHandler.prototype.callAPI = function(url) {
     dataType: 'jsonp',
     url: url,
     success: function(info){
-     
+
       _this.listCreator(info);
-      
+
     }
   });
 };
@@ -37,7 +37,7 @@ var posts = info.posts;
 
   for(i=0; i < 10; i++){
     handler = new WordpressPostHandler(posts[i]);
-    
+
     output = "<a href='"+handler.blogBacklink()+"'><h1>"+handler.blogTitle()+"</h1></a>"+
     "<time>"+handler.blogDate()+"</time>"+
     "<p>by "+handler.blogSource()+"</p>"+

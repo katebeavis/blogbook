@@ -3,7 +3,7 @@ describe ('Api Query', function() {
 
   describe('hitting the Tumblr API', function() {
 
-    var url ;
+    var url;
     url = 'marissamayr.tumblr.com'
     var urlWP;
     urlWP = "katebeavis.wordpress.com"
@@ -41,5 +41,5 @@ describe ('Api Query', function() {
     });
 
   });
-
+  
 });

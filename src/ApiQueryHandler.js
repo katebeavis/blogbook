@@ -7,6 +7,7 @@ ApiQueryHandler.prototype.targetAPI = function() {
   if(this.url.indexOf('tumblr') > 0) {
     var output;
     output = "https://api.tumblr.com/v2/blog/"+this.url+"/posts?api_key=5P9JPiGHHbnItpkHuxR0z591UnVqoCmX1nSvFBJVtRqQBDS1gQ";
+    this.callAPI(output);
     return output;}
   else if (this.url.indexOf('wordpress') > 0) {
     var output;
@@ -33,13 +34,13 @@ ApiQueryHandler.prototype.callAPI = function(url) {
 
 ApiQueryHandler.prototype.listCreator = function(info) {
 
-var posts = info.posts;
+var posts = info.response.posts;
+console.log(posts[0]);
 
   for(i=0; i < 10; i++){
-    handler = new WordpressPostHandler(posts[i]);
+    handler = new TumblrPostHandler(posts[i]);
 
-    output = "<a href='"+handler.blogBacklink()+"'><h1>"+handler.blogTitle()+"</h1></a>"+
-    "<time>"+handler.blogDate()+"</time>"+
+    output = "<time>"+handler.blogDate()+"</time>"+
     "<p>by "+handler.blogSource()+"</p>"+
     "<img src="+handler.blogMedia()+">"+
     "<p>"+handler.blogText()+"</p>"

@@ -20,9 +20,9 @@ TumblrPostHandler.prototype.blogTitle = function() {
 };
 
 TumblrPostHandler.prototype.blogBackLink = function() {
-  var blogLink;
-  blogLink = this.post[0].post_url;
-  return blogLink;
+  var blogBackLink;
+  blogBackLink = this.post[0].post_url;
+  return blogBackLink;
 };
 
 TumblrPostHandler.prototype.blogSource = function() {
@@ -36,10 +36,10 @@ TumblrPostHandler.prototype.blogMedia = function() {
     var blogMedia;
     blogMedia = this.post[0].photos[0].original_size.url;
     return blogMedia;}
-  else if(this.post[0].type === "link"){
-    var hyperLink;
-    hyperLink = this.post[0].url;
-    return hyperLink;}
+  // else if(this.post[0].type === "link"){
+  //   var hyperLink;
+  //   hyperLink = this.post[0].URL;
+  //   return hyperLink;}
   else if (this.post[0].type === "video"){
     var videoUrl;
     videoUrl = this.post[0].video_url;
@@ -54,10 +54,24 @@ TumblrPostHandler.prototype.blogText = function() {
     var blogText;
     blogText = this.post[0].body;
     return blogText;}
+    else if (this.post[0].type == "link"){
+      var reBlog;
+      reBlog = this.post[0].description;
+      return reBlog;}
   else {
     return '';
   }
 };
+
+// TumblrPostHandler.prototype.blogReblog = function() {
+//   if (this.post[0].type === "text") {
+//     var blogReblog;
+//     blogText = this.post[0].description;
+//     return blogReblog;}
+//   else {
+//     return '';
+//   }
+// };
 
 
 
